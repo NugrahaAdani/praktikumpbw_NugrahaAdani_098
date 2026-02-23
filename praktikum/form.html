@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get" enctype="multipart/formdata">
+      <div>
+        <label for="">Masukan Nama</label>
+        <input type="text" name="username" placeholder="namawoi" required />
+      </div>
+      <div>
+        <label for="">deskripsi</label>
+        <br />
+        <textarea
+          name="deskripsi"
+          id=""
+          rows="22"
+          cols="30"
+          placeholder="saya saye sayi..."
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="">Pilih jenis kelamin</label>
+        <select name="gender" id="">
+          <option value="L">Laki-Laki</option>
+          <option value="P">Perempuan</option>
+          <option value="B" selected>Bencong</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="radio" name="Pil1" value="1" checked /> Pilhan 1
+        <input type="radio" name="Pil1" value="2" /> Pilhan 2
+        <input type="radio" name="Pil1" value="3" /> Pilhan 3
+      </div>
+
+      <div>
+        <input type="checkbox" name="Hobi" value="futsal" /> Futsal
+        <input type="checkbox" name="Hobi" value="badmin" /> Badmin
+        <input type="checkbox" name="Hobi" value="renang" checked /> Renang
+      </div>
+
+      <label for="">Upload!</label>
+      <input type="file" />
+
+      <button type="Submit">Submit</button>
+      <button type="button" onclick="alert('Halo!')">Klik!</button>
+    </form>
+  </body>
+</html>

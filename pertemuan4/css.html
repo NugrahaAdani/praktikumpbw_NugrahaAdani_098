@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+    <header>
+        <h1>Halaman web</h1>
+    </header>
+    
+    <nav>
+    <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Tentang</a></li>
+        <li><a href="#">Layanan</a></li>
+        <li><a href="#">Kontak</a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+        <section class="content">
+            <h2>Formulir Pendaftaran</h2>
+            <p>Silahkan isi formulir di bawah ini untuk mendaftar.</p>
+            <div class="form">
+                <label>Nama Lengkap:</label>
+                <input type="text" name="nama" placeholder="Masukan Nama" required>
+
+                <label>Email:</label>
+                <input type="email" name="mail" placeholder="web@gmail.com" required>
+
+                <label>Password:</label>
+                <input type="password" name="pw" required>
+
+                <label>Jenis Kelamin:</label>
+                    <div class="option">
+                        <input type="radio" name="jk" value="L">
+                        <span>Laki-Laki</span>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="jk" value="P">
+                        <span>Perempuan</span>
+                    </div>    
+                    
+                <label>Hobi:</label>
+                    <div class="option">
+                        <input type="checkbox" name="hb" value="Musik">
+                        <span>Musik</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="hb" value="Olahraga">
+                        <span>Olahraga</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="hb" value="Membaca">
+                        <span>Membaca</span>
+                    </div>
+                    
+                <label>Pilih Kota:</label>
+                <select name="kota" id="">
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Karawang">Karawang</option>
+                    <option value="Bekasi">Bekasi</option>
+                </select>
+
+                <label>Pesan Tambahan:</label>
+                    <textarea name="pesan" placeholder="Tulis Pesan Anda Disini . . ." rows="4"></textarea>
+            </div>
+            <button class="btn" onclick="alert('Coba lagi!')">Klik Saya</button>
+        </section>
+        <aside class="sidebar">
+            <h2>Orang utan</h2><br>
+            <img src="orangutan.jpg" alt="orangutan">   
+            <p>Tentang<br>
+            <br>Orang utan atau mawas adalah kera besar yang berasal dari hutan hujan Indonesia dan Malaysia. Sekarang hewan ini hanya ditemukan di sebagian Kalimantan dan Sumatra, tetapi selama era Pleistosen, mereka tersebar di seluruh Asia Tenggara dan Tiongkok Selatan.<a href="https://id.wikipedia.org/wiki/Orang_utan">Wikipedia</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Halaman web.</p>
+    </footer>
+</body>
+</html>

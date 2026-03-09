@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Nilai Matkul</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h2>Cek Nilai Matkul</h2>
+
+    <div class="content">
+        <label>NIM</label>
+        <input type="text" id="nim" placeholder="2410631170098">
+
+        <label>Nama</label>
+        <input type="text" id="nama" placeholder="Nugraha Adani">
+    
+        <label>Nilai Matkul</label>
+        <input type="number" id="angka" placeholder="Masukkan nilai">
+
+        <button onclick="cekNilai()">Cek Nilai</button>
+    </div>
+
+    <div class="hasil-box">
+        <p><b>Hasil:</b></p>
+        <p id="hasil"></p>
+    </div>
+</div>
+
+</body>
+</html>

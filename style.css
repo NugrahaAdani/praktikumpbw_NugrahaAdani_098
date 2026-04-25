@@ -1,0 +1,322 @@
+/* ============================================================
+   Portal Materi Kuliah — style.css
+   ============================================================ */
+
+:root {
+  --bg:       #0a0a0f;
+  --border:   #1e1e2e;
+  --accent:   #e8ff47;
+  --accent2:  #ff6b35;
+  --text:     #e8e8f0;
+  --muted:    #5a5a72;
+  --card-bg:  #13131c;
+  --hover:    #1a1a28;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── BASE ── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,255,71,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,255,71,0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow orb */
+body::after {
+  content: '';
+  position: fixed;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(232,255,71,0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── LAYOUT ── */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+
+/* ── HEADER ── */
+header {
+  margin-bottom: 56px;
+  animation: fadeDown 0.6s ease both;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  border: 1px solid rgba(232,255,71,0.3);
+  padding: 5px 14px;
+  margin-bottom: 22px;
+}
+
+.label-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  animation: fadeUp 0.5s 0.25s ease both;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 32px 20px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.22s, border-color 0.22s, transform 0.18s, box-shadow 0.22s;
+  animation: fadeUp 0.5s both;
+  text-align: center;
+}
+
+/* Shimmer sweep */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 25%, rgba(232,255,71,0.05) 50%, transparent 75%);
+  transform: translateX(-110%);
+  transition: transform 0.55s ease;
+}
+
+.card:hover::after {
+  transform: translateX(110%);
+}
+
+.card:hover {
+  background: var(--hover);
+  border-color: rgba(232,255,71,0.28);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,255,71,0.07);
+}
+
+/* ── CARD — UTS VARIANT ── */
+.card--uts {
+  border-color: rgba(255,107,53,0.22);
+}
+
+.card--uts:hover {
+  border-color: rgba(255,107,53,0.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,107,53,0.1);
+}
+
+.card--uts .card-open {
+  color: var(--accent2);
+}
+
+.card--uts .card-title {
+  color: #ff8a60;
+}
+
+/* ── ICON ── */
+.card-icon-wrap {
+  position: relative;
+  width: 76px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folder-svg {
+  width: 76px;
+  height: 68px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.card:hover .folder-svg {
+  transform: scale(1.1) translateY(-3px);
+}
+
+.icon-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: #0a0a0f;
+  background: var(--accent);
+  padding: 2px 6px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.icon-badge--uts {
+  background: var(--accent2);
+}
+
+/* ── CARD TEXT ── */
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--text);
+}
+
+.card-open {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.2s, transform 0.2s, color 0.2s;
+}
+
+.card:hover .card-open {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 70px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.5s 0.55s ease both;
+}
+
+.footer-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.fdot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: pulse 2s infinite;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ── STAGGER CARDS ── */
+.card:nth-child(1) { animation-delay: 0.28s; }
+.card:nth-child(2) { animation-delay: 0.33s; }
+.card:nth-child(3) { animation-delay: 0.38s; }
+.card:nth-child(4) { animation-delay: 0.43s; }
+.card:nth-child(5) { animation-delay: 0.48s; }
+.card:nth-child(6) { animation-delay: 0.53s; }
+.card:nth-child(7) { animation-delay: 0.58s; }
+.card:nth-child(8) { animation-delay: 0.63s; }
+.card:nth-child(9) { animation-delay: 0.68s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}

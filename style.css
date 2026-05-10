@@ -424,6 +424,7 @@ footer {
 .card:nth-child(7) { animation-delay: 0.58s; }
 .card:nth-child(8) { animation-delay: 0.63s; }
 .card:nth-child(9) { animation-delay: 0.68s; }
+.card:nth-child(10) { animation-delay: 0.73s; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {

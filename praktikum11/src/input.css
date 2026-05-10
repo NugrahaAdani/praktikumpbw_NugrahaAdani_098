@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ijo: #2DD4BF; 
+  --color-darkblue: #1e293b;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+@utility bg-dark-gradient{
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+}
+
+@utility text-dark-gradient {
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
